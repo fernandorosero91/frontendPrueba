@@ -19,8 +19,6 @@ const nextConfig = {
   generateEtags: false,
   // Skip static optimization for all pages
   skipTrailingSlashRedirect: true,
-  // Disable static generation completely
-  outputExport: false,
 }
 
 export default nextConfig
