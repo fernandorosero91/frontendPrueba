@@ -13,6 +13,14 @@ const nextConfig = {
   experimental: {
     outputFileTracingRoot: process.cwd(),
   },
+  trailingSlash: false,
+  distDir: '.next',
+  // Disable static generation to avoid runtime errors during build
+  generateEtags: false,
+  // Skip static optimization for all pages
+  skipTrailingSlashRedirect: true,
+  // Disable static generation completely
+  outputExport: false,
 }
 
 export default nextConfig
