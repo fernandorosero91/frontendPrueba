@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -19,6 +21,14 @@ const nextConfig = {
   generateEtags: false,
   // Skip static optimization for all pages
   skipTrailingSlashRedirect: true,
+  // Explicitly configure webpack aliases
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '.'),
+    };
+    return config;
+  },
 }
 
 export default nextConfig
